@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom"
 
 // components
 import Navbar from "../components/Navbar"
+import Sidebar from "../components/Sidebar"
 
 export default function RootLayout() {
   return (
@@ -10,18 +11,18 @@ export default function RootLayout() {
       {/* sidebar */}
       <GridItem
         as="aside"
-        colSpan="1"
+        colSpan={{ base: 6, lg: 2, xl: 1 }} 
         bg="purple.400"
-        minHeight="100hv"
-        p="30px"
+        minHeight={{ lg: '100vh' }}
+        p={{ base: '20px', lg: '30px' }}
       >
-        <span>sidebar</span>
+        <Sidebar />
       </GridItem>
 
       {/* main content & navbar */}
       <GridItem
         as="main"
-        colSpan="5"
+        colSpan={{ base: 6, lg: 4, xl: 5 }} 
         p="40px"
       >
         <Navbar />
